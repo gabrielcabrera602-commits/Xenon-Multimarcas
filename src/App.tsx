@@ -1,6 +1,63 @@
 import { useEffect, useState } from "react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import xenonHero from "@/imports/ChatGPT_Image_18_de_set._de_2026__10_43_35.png";
+import hb20Exterior from "./assets/hb20-2013/01-externa-3-4.jpeg";
+import hb20Rear from "./assets/hb20-2013/02-traseira.jpeg";
+import hb20Side from "./assets/hb20-2013/03-lateral.jpeg";
+import hb20Interior from "./assets/hb20-2013/04-interior.jpeg";
+import hb20Dashboard from "./assets/hb20-2013/05-painel.jpeg";
+import hb20RearSeat from "./assets/hb20-2013/06-banco-traseiro.jpeg";
+import vectraExterior from "./assets/vectra-2009/01-externa-3-4.jpeg";
+import vectraExteriorFront from "./assets/vectra-2009/02-externa-frontal.jpeg";
+import vectraRear from "./assets/vectra-2009/03-traseira.jpeg";
+import vectraFront from "./assets/vectra-2009/04-frontal.jpeg";
+import vectraDashboard from "./assets/vectra-2009/05-painel.jpeg";
+import vectraRearSeat from "./assets/vectra-2009/06-banco-traseiro.jpeg";
+import cruzeRear from "./assets/cruze-2015/01-traseira.jpeg";
+import cruzeRearSeat from "./assets/cruze-2015/02-banco-traseiro.jpeg";
+import cruzeDashboard from "./assets/cruze-2015/03-painel.jpeg";
+import cruzeRearThreeQuarter from "./assets/cruze-2015/04-traseira-3-4.jpeg";
+import cruzeRearSide from "./assets/cruze-2015/05-traseira-lateral.jpeg";
+import cruzeFront from "./assets/cruze-2015/06-frontal.jpeg";
+import aircrossRearThreeQuarter from "./assets/aircross/01-traseira-3-4.jpeg";
+import aircrossRear from "./assets/aircross/02-traseira.jpeg";
+import aircrossFront from "./assets/aircross/03-frontal.jpeg";
+import aircrossInterior from "./assets/aircross/04-interior.jpeg";
+import aircrossDashboard from "./assets/aircross/05-painel.jpeg";
+import aircrossRearSide from "./assets/aircross/06-traseira.jpeg";
+import tucsonRear from "./assets/tucson-2013/01-traseira.jpeg";
+import tucsonRightSide from "./assets/tucson-2013/02-lateral-direita.jpeg";
+import tucsonLeftSide from "./assets/tucson-2013/03-lateral-esquerda.jpeg";
+import tucsonFront from "./assets/tucson-2013/04-frontal.jpeg";
+import c3Dashboard from "./assets/c3-2025/01-painel.jpeg";
+import c3Rear from "./assets/c3-2025/02-traseira.jpeg";
+import c3RightSide from "./assets/c3-2025/03-lateral-direita.jpeg";
+import c3LeftSide from "./assets/c3-2025/04-lateral-esquerda.jpeg";
+import c3Front from "./assets/c3-2025/05-frontal.jpeg";
+import spacefoxDashboard from "./assets/spacefox-2013/01-painel.jpeg";
+import spacefoxRear from "./assets/spacefox-2013/02-traseira.jpeg";
+import spacefoxRightSide from "./assets/spacefox-2013/03-lateral-direita.jpeg";
+import spacefoxLeftSide from "./assets/spacefox-2013/04-lateral-esquerda.jpeg";
+import spacefoxFront from "./assets/spacefox-2013/05-frontal.jpeg";
+import spacecrossDashboard from "./assets/spacecross-2013/01-painel.jpeg";
+import spacecrossRightSide from "./assets/spacecross-2013/02-lateral-direita.jpeg";
+import spacecrossLeftSide from "./assets/spacecross-2013/03-lateral-esquerda.jpeg";
+import spacecrossRear from "./assets/spacecross-2013/04-traseira.jpeg";
+import crossfoxDashboard from "./assets/crossfox-2013/01-painel.jpeg";
+import crossfoxRear from "./assets/crossfox-2013/02-traseira.jpeg";
+import crossfoxLeftSide from "./assets/crossfox-2013/03-lateral-esquerda.jpeg";
+import crossfoxRightSide from "./assets/crossfox-2013/04-lateral-direita.jpeg";
+import crossfoxFront from "./assets/crossfox-2013/05-frontal.jpeg";
+import hrvDashboard from "./assets/hrv-2025/01-painel.jpeg";
+import hrvRear from "./assets/hrv-2025/02-traseira.jpeg";
+import hrvRightSide from "./assets/hrv-2025/03-lateral-direita.jpeg";
+import hrvLeftSide from "./assets/hrv-2025/04-lateral-esquerda.jpeg";
+import hrvFront from "./assets/hrv-2025/05-frontal.jpeg";
+import ecosportRear from "./assets/ecosport-2018/01-traseira.jpeg";
+import ecosportInterior from "./assets/ecosport-2018/02-interior.jpeg";
+import ecosportRightSide from "./assets/ecosport-2018/03-lateral-direita.jpeg";
+import ecosportLeftSide from "./assets/ecosport-2018/04-lateral-esquerda.jpeg";
+import ecosportFront from "./assets/ecosport-2018/05-frontal.jpeg";
 
 const SELLERS = [
   {
@@ -38,10 +95,11 @@ const cars = [
     portaMalas: "325 L",
     consumo: "7,0 km/l cidade / 8,5 km/l estrada (gasolina)",
     tanque: "65 L",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=85",
+    image: tucsonFront,
   },
   {
     name: "Ford EcoSport 1.5",
+    price: "Consulte a equipe",
     year: "2018",
     km: "63.341 km",
     motor: "1.5 Ti-VCT Flex, 3 cilindros, 12V",
@@ -50,7 +108,7 @@ const cars = [
     portaMalas: "356 L",
     consumo: "Manual: 8,3 km/l (E) / 11,6 km/l (G) na cidade",
     tanque: "52 L",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85",
+    image: ecosportFront,
   },
   {
     name: "Chevrolet Corsa Maxx 1.4",
@@ -75,7 +133,7 @@ const cars = [
     portaMalas: "260 L",
     consumo: "6,0 km/l (E) / 8,9 km/l (G) cidade; 7,7 / 11,4 estrada",
     tanque: "50 L",
-    image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=85",
+    image: crossfoxFront,
   },
   {
     name: "Volkswagen Gol 1.0 MPI Totalflex",
@@ -92,7 +150,7 @@ const cars = [
   {
     name: "Honda HR-V Touring 1.5 Turbo",
     price: "Consulte a equipe",
-    year: "2024",
+    year: "2025",
     km: "67.000 km",
     motor: "1.5 DI VTEC Turbo Flex, 4 cilindros, 16V, injeção direta",
     cambio: "CVT com 7 marchas simuladas e paddle shifts",
@@ -100,7 +158,7 @@ const cars = [
     portaMalas: "354 L",
     consumo: "7,9 km/l (E) / 11,3 km/l (G) cidade; 8,8 / 12,6 estrada",
     tanque: "50 L",
-    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=85",
+    image: hrvFront,
   },
   {
     name: "Peugeot 2008 Allure 1.6",
@@ -139,20 +197,20 @@ const cars = [
     portaMalas: "315 L",
     consumo: "9,3 km/l (E) / 13,0 km/l (G) cidade; 10,0 / 14,6 estrada",
     tanque: "47 L",
-    image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=85",
+    image: c3Front,
   },
   {
-    name: "Volkswagen Space Cross 1.6 MSI",
+    name: "Volkswagen Space Cross 1.6",
     price: "Consulte a equipe",
-    year: "2015/2016",
+    year: "2013",
     km: "171.000 km",
-    motor: "1.6 MSI 16V Flex",
-    cambio: "Manual de 6 velocidades",
-    potencia: "120 cv (E) / 110 cv (G)",
-    portaMalas: "440 L",
-    consumo: "7,0 km/l (E) / 10,0 km/l (G) cidade; 7,5 / 11,1 estrada",
+    motor: "1.6 VHT Flex, 4 cilindros, 8V",
+    cambio: "Manual de 5 velocidades",
+    potencia: "104 cv (E) / 101 cv (G)",
+    portaMalas: "430 L",
+    consumo: "6,1 km/l (E) / 7,9 km/l (G) cidade; 8,2 / 10,7 estrada",
     tanque: "50 L",
-    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=85",
+    image: spacecrossLeftSide,
   },
   {
     name: "Toyota Corolla XEi 2.0",
@@ -178,7 +236,7 @@ const cars = [
     portaMalas: "526 L",
     consumo: "5,9 km/l (E) / 8,4 km/l (G) cidade; 7,9 / 11,4 estrada",
     tanque: "58 L",
-    image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1200&q=85",
+    image: vectraExterior,
   },
   {
     name: "Chevrolet Onix Joy 1.0",
@@ -204,7 +262,7 @@ const cars = [
     portaMalas: "300 L",
     consumo: "7,6 km/l (E) / 11,5 km/l (G) cidade; 9,8 / 14,5 estrada",
     tanque: "50 L",
-    image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1200&q=85",
+    image: hb20Exterior,
   },
   {
     name: "Citroën Aircross GLX 1.6",
@@ -217,7 +275,7 @@ const cars = [
     portaMalas: "403 L",
     consumo: "5,9 km/l (E) / 8,4 km/l (G) cidade; 7,4 / 10,7 estrada",
     tanque: "55 L",
-    image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&q=85",
+    image: aircrossRearThreeQuarter,
   },
   {
     name: "Hyundai HB20S Comfort Plus 1.0",
@@ -243,7 +301,7 @@ const cars = [
     portaMalas: "450 L",
     consumo: "6,6 km/l (E) / 8,6–9,1 km/l (G) cidade; 9,1–9,3 / 11,8–12,1 estrada",
     tanque: "60 L",
-    image: "https://images.unsplash.com/photo-1532932497843-4f50dba7b2c5?auto=format&fit=crop&w=1200&q=85",
+    image: cruzeFront,
   },
   {
     name: "Volkswagen SpaceFox",
@@ -256,7 +314,7 @@ const cars = [
     portaMalas: "430 L",
     consumo: "7,2 km/l (E) / 9,4 km/l (G) cidade; 10,1 / 13,1 estrada",
     tanque: "50 L",
-    image: "https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=1200&q=85",
+    image: spacefoxFront,
   },
   {
     name: "Ford Fiesta 1.0",
@@ -284,6 +342,96 @@ const cars = [
     tanque: "63 L",
     image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=85",
   },
+];
+
+const vectraGallery = [
+  { src: vectraExterior, alt: "Chevrolet Vectra 2009 prata em vista dianteira de três quartos no showroom" },
+  { src: vectraExteriorFront, alt: "Chevrolet Vectra 2009 prata em vista dianteira no showroom" },
+  { src: vectraRear, alt: "Traseira do Chevrolet Vectra 2009 prata no showroom" },
+  { src: vectraFront, alt: "Frente do Chevrolet Vectra 2009 prata no showroom" },
+  { src: vectraDashboard, alt: "Painel e volante do Chevrolet Vectra 2009" },
+  { src: vectraRearSeat, alt: "Banco traseiro do Chevrolet Vectra 2009" },
+];
+
+const hb20Gallery = [
+  { src: hb20Exterior, alt: "Hyundai HB20 2013 branco em vista traseira de três quartos no showroom" },
+  { src: hb20Rear, alt: "Hyundai HB20 2013 branco visto de traseira no showroom" },
+  { src: hb20Side, alt: "Hyundai HB20 2013 branco em vista lateral traseira" },
+  { src: hb20Interior, alt: "Interior traseiro do Hyundai HB20 2013" },
+  { src: hb20Dashboard, alt: "Painel e volante do Hyundai HB20 2013" },
+  { src: hb20RearSeat, alt: "Banco traseiro do Hyundai HB20 2013" },
+];
+
+const cruzeGallery = [
+  { src: cruzeFront, alt: "Chevrolet Cruze 2015 prata em vista frontal no showroom" },
+  { src: cruzeRearThreeQuarter, alt: "Chevrolet Cruze 2015 prata em vista traseira de três quartos" },
+  { src: cruzeRearSide, alt: "Chevrolet Cruze 2015 prata em vista traseira lateral no showroom" },
+  { src: cruzeRear, alt: "Traseira do Chevrolet Cruze 2015 prata no showroom" },
+  { src: cruzeDashboard, alt: "Painel e interior dianteiro do Chevrolet Cruze 2015" },
+  { src: cruzeRearSeat, alt: "Banco traseiro do Chevrolet Cruze 2015" },
+];
+
+const aircrossGallery = [
+  { src: aircrossRearThreeQuarter, alt: "Citroën Aircross marrom em vista traseira de três quartos no showroom" },
+  { src: aircrossRear, alt: "Traseira do Citroën Aircross marrom no showroom" },
+  { src: aircrossFront, alt: "Citroën Aircross marrom em vista frontal no showroom" },
+  { src: aircrossInterior, alt: "Interior dianteiro do Citroën Aircross" },
+  { src: aircrossDashboard, alt: "Painel e câmbio automático do Citroën Aircross" },
+  { src: aircrossRearSide, alt: "Citroën Aircross marrom em vista traseira no showroom" },
+];
+
+const tucsonGallery = [
+  { src: tucsonRear, alt: "Hyundai Tucson GLS 2013 prata em vista traseira no showroom" },
+  { src: tucsonRightSide, alt: "Hyundai Tucson GLS 2013 prata em vista lateral direita" },
+  { src: tucsonLeftSide, alt: "Hyundai Tucson GLS 2013 prata em vista lateral esquerda" },
+  { src: tucsonFront, alt: "Hyundai Tucson GLS 2013 prata em vista frontal no showroom" },
+];
+
+const crossfoxGallery = [
+  { src: crossfoxFront, alt: "Volkswagen CrossFox 2013 vermelho em vista frontal no showroom" },
+  { src: crossfoxRear, alt: "Traseira do Volkswagen CrossFox 2013 vermelho no showroom" },
+  { src: crossfoxLeftSide, alt: "Volkswagen CrossFox 2013 vermelho em vista lateral esquerda" },
+  { src: crossfoxRightSide, alt: "Volkswagen CrossFox 2013 vermelho em vista lateral direita" },
+  { src: crossfoxDashboard, alt: "Painel e volante do Volkswagen CrossFox 2013" },
+];
+
+const hrvGallery = [
+  { src: hrvFront, alt: "Honda HR-V 2025 branco em vista frontal no showroom" },
+  { src: hrvRear, alt: "Traseira do Honda HR-V 2025 branco no showroom" },
+  { src: hrvRightSide, alt: "Honda HR-V 2025 branco em vista lateral direita" },
+  { src: hrvLeftSide, alt: "Honda HR-V 2025 branco em vista lateral esquerda" },
+  { src: hrvDashboard, alt: "Painel, volante e câmbio automático do Honda HR-V 2025" },
+];
+
+const ecosportGallery = [
+  { src: ecosportFront, alt: "Ford EcoSport 2018 preta em vista frontal no showroom" },
+  { src: ecosportRear, alt: "Traseira da Ford EcoSport 2018 preta no showroom" },
+  { src: ecosportRightSide, alt: "Ford EcoSport 2018 preta em vista lateral direita" },
+  { src: ecosportLeftSide, alt: "Ford EcoSport 2018 preta em vista lateral esquerda" },
+  { src: ecosportInterior, alt: "Interior dianteiro da Ford EcoSport 2018 com câmbio automático" },
+];
+
+const spacefoxGallery = [
+  { src: spacefoxDashboard, alt: "Painel e interior dianteiro do Volkswagen SpaceFox 2013 vermelho" },
+  { src: spacefoxRear, alt: "Traseira do Volkswagen SpaceFox 2013 vermelho no showroom" },
+  { src: spacefoxRightSide, alt: "Volkswagen SpaceFox 2013 vermelho em vista lateral direita" },
+  { src: spacefoxLeftSide, alt: "Volkswagen SpaceFox 2013 vermelho em vista lateral esquerda" },
+  { src: spacefoxFront, alt: "Volkswagen SpaceFox 2013 vermelho em vista frontal no showroom" },
+];
+
+const spacecrossGallery = [
+  { src: spacecrossDashboard, alt: "Painel e interior dianteiro do Volkswagen Space Cross 2013 vermelho" },
+  { src: spacecrossRightSide, alt: "Volkswagen Space Cross 2013 vermelho em vista lateral direita" },
+  { src: spacecrossLeftSide, alt: "Volkswagen Space Cross 2013 vermelho em vista lateral esquerda" },
+  { src: spacecrossRear, alt: "Traseira do Volkswagen Space Cross 2013 vermelho no showroom" },
+];
+
+const c3Gallery = [
+  { src: c3Front, alt: "Citroën C3 Live 1.0 2024/2025 em vista frontal no showroom" },
+  { src: c3Rear, alt: "Traseira do Citroën C3 Live 1.0 2024/2025 no showroom" },
+  { src: c3RightSide, alt: "Citroën C3 Live 1.0 2024/2025 em vista lateral direita" },
+  { src: c3LeftSide, alt: "Citroën C3 Live 1.0 2024/2025 em vista lateral esquerda" },
+  { src: c3Dashboard, alt: "Painel e interior dianteiro do Citroën C3 Live 1.0 2024/2025" },
 ];
 
 const gallery = [
@@ -373,6 +521,7 @@ function WhatsAppLink({
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedCar, setSelectedCar] = useState<number | null>(null);
+  const [selectedCarPhoto, setSelectedCarPhoto] = useState(0);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   useEffect(() => {
@@ -496,7 +645,7 @@ export default function App() {
             <article className="car-card" key={index}>
               <button
                 className="car-image-button"
-                onClick={() => setSelectedCar(index)}
+                onClick={() => { setSelectedCarPhoto(0); setSelectedCar(index); }}
                 aria-label={`Ver detalhes: ${car.name}`}
               >
                 <ImageWithFallback
@@ -512,7 +661,7 @@ export default function App() {
                     <small>{car.year}</small>
                     <h3>{car.name}</h3>
                   </div>
-                  <button onClick={() => setSelectedCar(index)} aria-label="Abrir detalhes">
+                  <button onClick={() => { setSelectedCarPhoto(0); setSelectedCar(index); }} aria-label="Abrir detalhes">
                     <Icon name="arrow" />
                   </button>
                 </div>
@@ -661,10 +810,32 @@ export default function App() {
             <button className="modal-close" onClick={() => setSelectedCar(null)}>
               <Icon name="close" />
             </button>
-            <ImageWithFallback
-              src={cars[selectedCar].image}
-              alt="Foto ilustrativa do veículo"
-            />
+            {["Hyundai Tucson GLS 2.0", "Hyundai HB20 1.0", "Chevrolet Vectra Elegance 2.0", "Chevrolet Cruze LT 1.8", "Citroën Aircross GLX 1.6", "Citroën C3 Live 1.0", "Volkswagen SpaceFox", "Volkswagen Space Cross 1.6", "Volkswagen CrossFox 1.6 Mi", "Honda HR-V Touring 1.5 Turbo", "Ford EcoSport 1.5"].includes(cars[selectedCar].name) ? (
+              <div className="vehicle-gallery">
+                <ImageWithFallback
+                  src={(cars[selectedCar].name === "Hyundai Tucson GLS 2.0" ? tucsonGallery : cars[selectedCar].name === "Chevrolet Vectra Elegance 2.0" ? vectraGallery : cars[selectedCar].name === "Chevrolet Cruze LT 1.8" ? cruzeGallery : cars[selectedCar].name === "Citroën Aircross GLX 1.6" ? aircrossGallery : cars[selectedCar].name === "Citroën C3 Live 1.0" ? c3Gallery : cars[selectedCar].name === "Volkswagen SpaceFox" ? spacefoxGallery : cars[selectedCar].name === "Volkswagen Space Cross 1.6" ? spacecrossGallery : cars[selectedCar].name === "Volkswagen CrossFox 1.6 Mi" ? crossfoxGallery : cars[selectedCar].name === "Honda HR-V Touring 1.5 Turbo" ? hrvGallery : cars[selectedCar].name === "Ford EcoSport 1.5" ? ecosportGallery : hb20Gallery)[selectedCarPhoto].src}
+                  alt={(cars[selectedCar].name === "Hyundai Tucson GLS 2.0" ? tucsonGallery : cars[selectedCar].name === "Chevrolet Vectra Elegance 2.0" ? vectraGallery : cars[selectedCar].name === "Chevrolet Cruze LT 1.8" ? cruzeGallery : cars[selectedCar].name === "Citroën Aircross GLX 1.6" ? aircrossGallery : cars[selectedCar].name === "Citroën C3 Live 1.0" ? c3Gallery : cars[selectedCar].name === "Volkswagen SpaceFox" ? spacefoxGallery : cars[selectedCar].name === "Volkswagen Space Cross 1.6" ? spacecrossGallery : cars[selectedCar].name === "Volkswagen CrossFox 1.6 Mi" ? crossfoxGallery : cars[selectedCar].name === "Honda HR-V Touring 1.5 Turbo" ? hrvGallery : cars[selectedCar].name === "Ford EcoSport 1.5" ? ecosportGallery : hb20Gallery)[selectedCarPhoto].alt}
+                  className="vehicle-gallery-main"
+                />
+                <div className="vehicle-gallery-thumbs" aria-label={`Galeria de fotos do ${cars[selectedCar].name}`}>
+                  {(cars[selectedCar].name === "Hyundai Tucson GLS 2.0" ? tucsonGallery : cars[selectedCar].name === "Chevrolet Vectra Elegance 2.0" ? vectraGallery : cars[selectedCar].name === "Chevrolet Cruze LT 1.8" ? cruzeGallery : cars[selectedCar].name === "Citroën Aircross GLX 1.6" ? aircrossGallery : cars[selectedCar].name === "Citroën C3 Live 1.0" ? c3Gallery : cars[selectedCar].name === "Volkswagen SpaceFox" ? spacefoxGallery : cars[selectedCar].name === "Volkswagen Space Cross 1.6" ? spacecrossGallery : cars[selectedCar].name === "Volkswagen CrossFox 1.6 Mi" ? crossfoxGallery : hb20Gallery).map((photo, photoIndex) => (
+                    <button
+                      key={photoIndex}
+                      className={photoIndex === selectedCarPhoto ? "vehicle-thumb active" : "vehicle-thumb"}
+                      onClick={() => setSelectedCarPhoto(photoIndex)}
+                      aria-label={`Ver foto ${photoIndex + 1} do ${cars[selectedCar].name}`}
+                    >
+                      <img src={photo.src} alt="" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <ImageWithFallback
+                src={cars[selectedCar].image}
+                alt="Foto ilustrativa do veículo"
+              />
+            )}
             <div className="modal-copy">
               <div className="section-kicker">Detalhes do veículo</div>
               <h2>{cars[selectedCar].name}</h2>
