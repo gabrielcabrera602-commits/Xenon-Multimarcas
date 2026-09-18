@@ -34,6 +34,11 @@ import c3Rear from "./assets/c3-2025/02-traseira.jpeg";
 import c3RightSide from "./assets/c3-2025/03-lateral-direita.jpeg";
 import c3LeftSide from "./assets/c3-2025/04-lateral-esquerda.jpeg";
 import c3Front from "./assets/c3-2025/05-frontal.jpeg";
+import c3_2013RightSide from "./assets/c3-2013/01-lateral-direita.jpeg";
+import c3_2013LeftSide from "./assets/c3-2013/02-lateral-esquerda.jpeg";
+import c3_2013RearThreeQuarter from "./assets/c3-2013/03-traseira-3-4.jpeg";
+import c3_2013Front from "./assets/c3-2013/04-frontal.jpeg";
+import c3_2013Dashboard from "./assets/c3-2013/05-painel.jpeg";
 import spacefoxDashboard from "./assets/spacefox-2013/01-painel.jpeg";
 import spacefoxRear from "./assets/spacefox-2013/02-traseira.jpeg";
 import spacefoxRightSide from "./assets/spacefox-2013/03-lateral-direita.jpeg";
@@ -43,6 +48,11 @@ import spacecrossDashboard from "./assets/spacecross-2013/01-painel.jpeg";
 import spacecrossRightSide from "./assets/spacecross-2013/02-lateral-direita.jpeg";
 import spacecrossLeftSide from "./assets/spacecross-2013/03-lateral-esquerda.jpeg";
 import spacecrossRear from "./assets/spacecross-2013/04-traseira.jpeg";
+import golDashboard from "./assets/gol-2023/01-painel.jpeg";
+import golLeftSide from "./assets/gol-2023/02-lateral-esquerda.jpeg";
+import golRightSide from "./assets/gol-2023/03-lateral-direita.jpeg";
+import golRear from "./assets/gol-2023/04-traseira.jpeg";
+import golFront from "./assets/gol-2023/05-frontal.jpeg";
 import crossfoxDashboard from "./assets/crossfox-2013/01-painel.jpeg";
 import crossfoxRear from "./assets/crossfox-2013/02-traseira.jpeg";
 import crossfoxLeftSide from "./assets/crossfox-2013/03-lateral-esquerda.jpeg";
@@ -58,6 +68,10 @@ import ecosportInterior from "./assets/ecosport-2018/02-interior.jpeg";
 import ecosportRightSide from "./assets/ecosport-2018/03-lateral-direita.jpeg";
 import ecosportLeftSide from "./assets/ecosport-2018/04-lateral-esquerda.jpeg";
 import ecosportFront from "./assets/ecosport-2018/05-frontal.jpeg";
+import fiestaFrontThreeQuarter from "./assets/fiesta-2012/01-frontal-3-4.jpeg";
+import fiestaFront from "./assets/fiesta-2012/02-frontal.jpeg";
+import fiestaDashboard from "./assets/fiesta-2012/03-painel.jpeg";
+import fiestaRearThreeQuarter from "./assets/fiesta-2012/04-traseira-3-4.jpeg";
 
 const SELLERS = [
   {
@@ -111,18 +125,6 @@ const cars = [
     image: ecosportFront,
   },
   {
-    name: "Chevrolet Corsa Maxx 1.4",
-    year: "2012",
-    km: "159.000 km",
-    motor: "1.4 MPFI Econoflex, 4 cilindros, 8V",
-    cambio: "Manual de 5 velocidades",
-    potencia: "105 cv (E) / 99 cv (G)",
-    portaMalas: "260 L",
-    consumo: "6,7 km/l (E) / 10,2 km/l (G) cidade; 8,3 / 12,8 estrada",
-    tanque: "44 L",
-    image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=85",
-  },
-  {
     name: "Volkswagen CrossFox 1.6 Mi",
     price: "Consulte a equipe",
     year: "2013",
@@ -137,7 +139,8 @@ const cars = [
   },
   {
     name: "Volkswagen Gol 1.0 MPI Totalflex",
-    year: "2022/2023",
+    price: "Consulte a equipe",
+    year: "2023",
     km: "a informar",
     motor: "1.0 12V MPI Totalflex",
     cambio: "Manual de 5 velocidades",
@@ -145,7 +148,7 @@ const cars = [
     portaMalas: "285 L",
     consumo: "9,4 km/l (E) / 13,7 km/l (G) cidade; 10,7 / 15,2 estrada",
     tanque: "55 L",
-    image: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=85",
+    image: golFront,
   },
   {
     name: "Honda HR-V Touring 1.5 Turbo",
@@ -161,30 +164,17 @@ const cars = [
     image: hrvFront,
   },
   {
-    name: "Peugeot 2008 Allure 1.6",
-    price: "Consulte a equipe",
-    year: "2017",
-    km: "101.800 km",
-    motor: "1.6 16V Flex",
-    cambio: "Automático sequencial de 4 velocidades",
-    potencia: "122 cv (E) / 115 cv (G)",
-    portaMalas: "355 L",
-    consumo: "6,8 km/l (E) / 9,4 km/l (G) cidade; 7,9 / 11,0 estrada",
-    tanque: "55 L",
-    image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=85",
-  },
-  {
     name: "Citroën C3 Tendance 1.5",
     price: "Consulte a equipe",
     year: "2013",
     km: "163.601 km",
-    motor: "1.5 Flex",
+    motor: "1.5 Flex, 4 cilindros, 8V",
     cambio: "Manual de 5 velocidades",
     potencia: "93 cv (E) / 89 cv (G)",
     portaMalas: "300 L",
     consumo: "7,5 km/l (E) / 11,9 km/l (G) cidade; 9,3 / 14,7 estrada",
     tanque: "55 L",
-    image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=85",
+    image: c3_2013Front,
   },
   {
     name: "Citroën C3 Live 1.0",
@@ -321,13 +311,13 @@ const cars = [
     price: "Consulte a equipe",
     year: "2012",
     km: "128.000 km",
-    motor: "1.0 Flex",
-    cambio: "Manual",
-    potencia: "a informar",
-    portaMalas: "a informar",
+    motor: "1.0 Zetec Rocam Flex, 4 cilindros, 8V",
+    cambio: "Manual de 5 velocidades",
+    potencia: "73 cv (E) / 69 cv (G)",
+    portaMalas: "305 L",
     consumo: "a informar",
-    tanque: "a informar",
-    image: "https://images.unsplash.com/photo-1541443131876-44f03f8c9b6d?auto=format&fit=crop&w=1200&q=85",
+    tanque: "54 L",
+    image: fiestaFrontThreeQuarter,
   },
   {
     name: "Chevrolet Captiva 3.0 V6 AWD",
@@ -411,6 +401,13 @@ const ecosportGallery = [
   { src: ecosportInterior, alt: "Interior dianteiro da Ford EcoSport 2018 com câmbio automático" },
 ];
 
+const fiestaGallery = [
+  { src: fiestaFrontThreeQuarter, alt: "Ford Fiesta 1.0 2012 branco em vista dianteira de três quartos no showroom" },
+  { src: fiestaFront, alt: "Ford Fiesta 1.0 2012 branco em vista frontal no showroom" },
+  { src: fiestaDashboard, alt: "Painel, volante e câmbio manual do Ford Fiesta 1.0 2012" },
+  { src: fiestaRearThreeQuarter, alt: "Ford Fiesta 1.0 2012 branco em vista traseira de três quartos" },
+];
+
 const spacefoxGallery = [
   { src: spacefoxDashboard, alt: "Painel e interior dianteiro do Volkswagen SpaceFox 2013 vermelho" },
   { src: spacefoxRear, alt: "Traseira do Volkswagen SpaceFox 2013 vermelho no showroom" },
@@ -426,12 +423,20 @@ const spacecrossGallery = [
   { src: spacecrossRear, alt: "Traseira do Volkswagen Space Cross 2013 vermelho no showroom" },
 ];
 
+const golGallery = [
+  { src: golDashboard, alt: "Painel e interior dianteiro do Volkswagen Gol 2023 branco" },
+  { src: golLeftSide, alt: "Volkswagen Gol 2023 branco em vista lateral esquerda" },
+  { src: golRightSide, alt: "Volkswagen Gol 2023 branco em vista lateral direita" },
+  { src: golRear, alt: "Traseira do Volkswagen Gol 2023 branco no showroom" },
+  { src: golFront, alt: "Volkswagen Gol 2023 branco em vista frontal no showroom" },
+];
+
 const c3Gallery = [
-  { src: c3Front, alt: "Citroën C3 Live 1.0 2024/2025 em vista frontal no showroom" },
-  { src: c3Rear, alt: "Traseira do Citroën C3 Live 1.0 2024/2025 no showroom" },
-  { src: c3RightSide, alt: "Citroën C3 Live 1.0 2024/2025 em vista lateral direita" },
-  { src: c3LeftSide, alt: "Citroën C3 Live 1.0 2024/2025 em vista lateral esquerda" },
-  { src: c3Dashboard, alt: "Painel e interior dianteiro do Citroën C3 Live 1.0 2024/2025" },
+  { src: c3_2013Front, alt: "Citroën C3 Tendance 1.5 2013 vermelho em vista frontal no showroom" },
+  { src: c3_2013RightSide, alt: "Citroën C3 Tendance 1.5 2013 vermelho em vista lateral direita no showroom" },
+  { src: c3_2013LeftSide, alt: "Citroën C3 Tendance 1.5 2013 vermelho em vista lateral esquerda no showroom" },
+  { src: c3_2013RearThreeQuarter, alt: "Citroën C3 Tendance 1.5 2013 vermelho em vista traseira de três quartos" },
+  { src: c3_2013Dashboard, alt: "Painel, volante e câmbio manual do Citroën C3 Tendance 1.5 2013" },
 ];
 
 const gallery = [
@@ -810,15 +815,15 @@ export default function App() {
             <button className="modal-close" onClick={() => setSelectedCar(null)}>
               <Icon name="close" />
             </button>
-            {["Hyundai Tucson GLS 2.0", "Hyundai HB20 1.0", "Chevrolet Vectra Elegance 2.0", "Chevrolet Cruze LT 1.8", "Citroën Aircross GLX 1.6", "Citroën C3 Live 1.0", "Volkswagen SpaceFox", "Volkswagen Space Cross 1.6", "Volkswagen CrossFox 1.6 Mi", "Honda HR-V Touring 1.5 Turbo", "Ford EcoSport 1.5"].includes(cars[selectedCar].name) ? (
+            {["Hyundai Tucson GLS 2.0", "Hyundai HB20 1.0", "Chevrolet Vectra Elegance 2.0", "Chevrolet Cruze LT 1.8", "Citroën Aircross GLX 1.6", "Citroën C3 Live 1.0", "Citroën C3 Tendance 1.5", "Volkswagen SpaceFox", "Volkswagen Space Cross 1.6", "Volkswagen CrossFox 1.6 Mi", "Volkswagen Gol 1.0 MPI Totalflex", "Honda HR-V Touring 1.5 Turbo", "Ford EcoSport 1.5", "Ford Fiesta 1.0"].includes(cars[selectedCar].name) ? (
               <div className="vehicle-gallery">
                 <ImageWithFallback
-                  src={(cars[selectedCar].name === "Hyundai Tucson GLS 2.0" ? tucsonGallery : cars[selectedCar].name === "Chevrolet Vectra Elegance 2.0" ? vectraGallery : cars[selectedCar].name === "Chevrolet Cruze LT 1.8" ? cruzeGallery : cars[selectedCar].name === "Citroën Aircross GLX 1.6" ? aircrossGallery : cars[selectedCar].name === "Citroën C3 Live 1.0" ? c3Gallery : cars[selectedCar].name === "Volkswagen SpaceFox" ? spacefoxGallery : cars[selectedCar].name === "Volkswagen Space Cross 1.6" ? spacecrossGallery : cars[selectedCar].name === "Volkswagen CrossFox 1.6 Mi" ? crossfoxGallery : cars[selectedCar].name === "Honda HR-V Touring 1.5 Turbo" ? hrvGallery : cars[selectedCar].name === "Ford EcoSport 1.5" ? ecosportGallery : hb20Gallery)[selectedCarPhoto].src}
-                  alt={(cars[selectedCar].name === "Hyundai Tucson GLS 2.0" ? tucsonGallery : cars[selectedCar].name === "Chevrolet Vectra Elegance 2.0" ? vectraGallery : cars[selectedCar].name === "Chevrolet Cruze LT 1.8" ? cruzeGallery : cars[selectedCar].name === "Citroën Aircross GLX 1.6" ? aircrossGallery : cars[selectedCar].name === "Citroën C3 Live 1.0" ? c3Gallery : cars[selectedCar].name === "Volkswagen SpaceFox" ? spacefoxGallery : cars[selectedCar].name === "Volkswagen Space Cross 1.6" ? spacecrossGallery : cars[selectedCar].name === "Volkswagen CrossFox 1.6 Mi" ? crossfoxGallery : cars[selectedCar].name === "Honda HR-V Touring 1.5 Turbo" ? hrvGallery : cars[selectedCar].name === "Ford EcoSport 1.5" ? ecosportGallery : hb20Gallery)[selectedCarPhoto].alt}
+                  src={(cars[selectedCar].name === "Hyundai Tucson GLS 2.0" ? tucsonGallery : cars[selectedCar].name === "Chevrolet Vectra Elegance 2.0" ? vectraGallery : cars[selectedCar].name === "Chevrolet Cruze LT 1.8" ? cruzeGallery : cars[selectedCar].name === "Citroën Aircross GLX 1.6" ? aircrossGallery : cars[selectedCar].name === "Citroën C3 Live 1.0" || cars[selectedCar].name === "Citroën C3 Tendance 1.5" ? c3Gallery : cars[selectedCar].name === "Volkswagen SpaceFox" ? spacefoxGallery : cars[selectedCar].name === "Volkswagen Space Cross 1.6" ? spacecrossGallery : cars[selectedCar].name === "Volkswagen CrossFox 1.6 Mi" ? crossfoxGallery : cars[selectedCar].name === "Volkswagen Gol 1.0 MPI Totalflex" ? golGallery : cars[selectedCar].name === "Honda HR-V Touring 1.5 Turbo" ? hrvGallery : cars[selectedCar].name === "Ford EcoSport 1.5" ? ecosportGallery : cars[selectedCar].name === "Ford Fiesta 1.0" ? fiestaGallery : hb20Gallery)[selectedCarPhoto].src}
+                  alt={(cars[selectedCar].name === "Hyundai Tucson GLS 2.0" ? tucsonGallery : cars[selectedCar].name === "Chevrolet Vectra Elegance 2.0" ? vectraGallery : cars[selectedCar].name === "Chevrolet Cruze LT 1.8" ? cruzeGallery : cars[selectedCar].name === "Citroën Aircross GLX 1.6" ? aircrossGallery : cars[selectedCar].name === "Citroën C3 Live 1.0" || cars[selectedCar].name === "Citroën C3 Tendance 1.5" ? c3Gallery : cars[selectedCar].name === "Volkswagen SpaceFox" ? spacefoxGallery : cars[selectedCar].name === "Volkswagen Space Cross 1.6" ? spacecrossGallery : cars[selectedCar].name === "Volkswagen CrossFox 1.6 Mi" ? crossfoxGallery : cars[selectedCar].name === "Volkswagen Gol 1.0 MPI Totalflex" ? golGallery : cars[selectedCar].name === "Honda HR-V Touring 1.5 Turbo" ? hrvGallery : cars[selectedCar].name === "Ford EcoSport 1.5" ? ecosportGallery : cars[selectedCar].name === "Ford Fiesta 1.0" ? fiestaGallery : hb20Gallery)[selectedCarPhoto].alt}
                   className="vehicle-gallery-main"
                 />
                 <div className="vehicle-gallery-thumbs" aria-label={`Galeria de fotos do ${cars[selectedCar].name}`}>
-                  {(cars[selectedCar].name === "Hyundai Tucson GLS 2.0" ? tucsonGallery : cars[selectedCar].name === "Chevrolet Vectra Elegance 2.0" ? vectraGallery : cars[selectedCar].name === "Chevrolet Cruze LT 1.8" ? cruzeGallery : cars[selectedCar].name === "Citroën Aircross GLX 1.6" ? aircrossGallery : cars[selectedCar].name === "Citroën C3 Live 1.0" ? c3Gallery : cars[selectedCar].name === "Volkswagen SpaceFox" ? spacefoxGallery : cars[selectedCar].name === "Volkswagen Space Cross 1.6" ? spacecrossGallery : cars[selectedCar].name === "Volkswagen CrossFox 1.6 Mi" ? crossfoxGallery : hb20Gallery).map((photo, photoIndex) => (
+                  {(cars[selectedCar].name === "Hyundai Tucson GLS 2.0" ? tucsonGallery : cars[selectedCar].name === "Chevrolet Vectra Elegance 2.0" ? vectraGallery : cars[selectedCar].name === "Chevrolet Cruze LT 1.8" ? cruzeGallery : cars[selectedCar].name === "Citroën Aircross GLX 1.6" ? aircrossGallery : cars[selectedCar].name === "Citroën C3 Live 1.0" || cars[selectedCar].name === "Citroën C3 Tendance 1.5" ? c3Gallery : cars[selectedCar].name === "Volkswagen SpaceFox" ? spacefoxGallery : cars[selectedCar].name === "Volkswagen Space Cross 1.6" ? spacecrossGallery : cars[selectedCar].name === "Volkswagen CrossFox 1.6 Mi" ? crossfoxGallery : cars[selectedCar].name === "Volkswagen Gol 1.0 MPI Totalflex" ? golGallery : hb20Gallery).map((photo, photoIndex) => (
                     <button
                       key={photoIndex}
                       className={photoIndex === selectedCarPhoto ? "vehicle-thumb active" : "vehicle-thumb"}
